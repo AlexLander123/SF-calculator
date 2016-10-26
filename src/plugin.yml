@@ -1,0 +1,18 @@
+name: SFCalculator
+main: me.alexlander123.sfcalculator.SFCalculator
+version: 1.0
+author: AlexLander123
+commands:
+   coalcal:
+      description: Calculate amount of coal needed for certain coal base sf items.
+      usage: /<command> [itemcode] [amount of item]
+      permission: sfcalculator.calcoal
+      permission-message: You don't have <permission>.
+   raical:
+      description: Calculate amount of resources needed for reinforced alloy ingot.
+      usage: /<command> [amount of reinforced alloy ingot]
+      permission: sfcalculator.raical
+      permission-message: You don't have <permission>.
+description: >
+             A Slimefun Calculator
+
