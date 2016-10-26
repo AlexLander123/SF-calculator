@@ -13,6 +13,9 @@ commands:
       usage: /<command> [amount of reinforced alloy ingot]
       permission: sfcalculator.raical
       permission-message: You don't have <permission>.
+   sfcal:
+      description: Triggers SfCalculator help page.
+      usage: /<command>
 description: >
              A Slimefun Calculator
 
