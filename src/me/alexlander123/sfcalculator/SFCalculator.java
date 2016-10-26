@@ -25,7 +25,7 @@ public class SFCalculator extends JavaPlugin{
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (label.equalsIgnoreCase("coalcal")) {
-			if(args.length >= 2){
+			if(args.length == 2){
 			String calType = args[0];
 			if(isNumber(args[1])){
 			Integer numberOfResource = Integer.parseInt(args[1]);
@@ -58,12 +58,13 @@ public class SFCalculator extends JavaPlugin{
 			}
 			
 			}
-			}
-			}
+			}else{MessageHandler.sendMessage(sender, "The argument is not a valid number.");}
+			}else{MessageHandler.sendIncorrectCommandUsage("coalcal", sender);}
+			return true;
 			
 		}
 		else if(label.equalsIgnoreCase("raical")){
-			if(args.length >= 1){
+			if(args.length == 1){
 			if(isNumber(args[0])){
 				int numberOfRai = Integer.parseInt(args[0]);
 				int tinDust = (numberOfRai*3);
@@ -87,10 +88,18 @@ public class SFCalculator extends JavaPlugin{
 			    sender.sendMessage("1. Turn all the coal into carbon.");
 			    sender.sendMessage("2. Turn " + coal2 + "carbon into compressed carbon, let the rest be");
 			    sender.sendMessage("3. Turn " + goldDust3 + " gold dusts into " + numberOfRai + " 24-carat gold.");
-			}
-			}
+			}else{MessageHandler.sendMessage(sender, "The argument is not a valid number.");}
+			}else{MessageHandler.sendIncorrectCommandUsage("raical", sender);}
+			return true;
 		}
-		return false; 
+		else if(label.equalsIgnoreCase("sfcal")){
+			sender.sendMessage("SFCalculator V2 by AlexLander123");
+			sender.sendMessage("Credits to: Nihilist (Creator of The Original Python SFCalculator");
+			sender.sendMessage("");
+			sender.sendMessage("/coalcal - Calculate amount of coal needed for a certain amount of some SlimeFun coal based items.");
+			sender.sendMessage("/raical - Calculate amount of resources needed for a certain amount of Reinforced Alloy Ingot");
+		}
+		return true; 
 	}
 	
 	public static boolean isNumber(String num){
@@ -101,4 +110,6 @@ public class SFCalculator extends JavaPlugin{
 	}
 	return true;
 	}
+	
+
 }
